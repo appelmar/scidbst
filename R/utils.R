@@ -69,8 +69,17 @@
     }
     return(tmp)
   }
+  else {
+    tryCatch({
+      tmp = as.POSIXct(str)
+    }, error = function(e) {
+      stop("Cannot extract start time of the time series")
+    })
+    return(tmp)
+  }
   stop("Cannot extract start time of the time series")
 }
+
 
 #checks if all entries in a matrix are NA
 .isMatrixEmpty = function (m) {
