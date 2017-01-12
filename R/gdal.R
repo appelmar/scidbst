@@ -160,7 +160,7 @@ as_PNG_layer <- function(array, TMS=TRUE, bands=NULL, min=NULL, max=NULL, layern
   system2(command = file.path(gdalpath,"gdal_translate"), args =  as.character(cmd_args))
   
   out$image = NULL
-  if(files.exists(file.path(getwd(),OUTFILE)))  out$image = file.path(getwd(),OUTFILE)
+  if(file.exists(file.path(getwd(),OUTFILE)))  out$image = file.path(getwd(),OUTFILE)
   
   # if array reference is a query, remove temporary array
   if (!isNamedArray(array)) {
