@@ -16,7 +16,8 @@ BuildVignette: FALSE
 Depends:
     scidb,raster
 Imports:
-    spacetime,xts,rgdal,sp
+    spacetime,xts,rgdal,sp,
+    gdalUtils
 Suggests:
     knitr
 Collate:
@@ -36,12 +37,14 @@ Collate:
     'crop.R'
     'cumulate.R'
     'extent.R'
+    'gdal.R'
     'join.R'
     'names.R'
     'pkg.R'
     'project.R'
     'regrid.R'
     'scidb-basic.R'
+    'scidbstconnect.R'
     'scidbsteval.R'
     'slice.R'
     'spplot.R'
