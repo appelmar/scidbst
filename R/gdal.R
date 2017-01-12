@@ -45,6 +45,8 @@
 
 
 
+#' Create a PNG image and TMS from a spatial SciDB array
+#' 
 #' This function downloads a spatial SciDB array as a PNG file, selects one or three bands, and stretches
 #' attribute values to the range from 0 to 255. Optionally, a TMS is created for fast visualization in web maps.
 #' If array is a query, it is executed and stored as a temporary array and deleted after successful download.

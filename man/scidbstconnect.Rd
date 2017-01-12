@@ -2,7 +2,7 @@
 % Please edit documentation in R/scidbstconnect.R
 \name{scidbstconnect}
 \alias{scidbstconnect}
-\title{Calls \code{\link{scidbconnect}} and sets aditional environment variables to connect to SciDB with GDAL.}
+\title{Connect to a SciDB database from R and GDAL}
 \usage{
 scidbstconnect(host = options("scidb.default_shim_host")[[1]],
   port = options("scidb.default_shim_port")[[1]], username, password,
@@ -22,7 +22,7 @@ scidbstconnect(host = options("scidb.default_shim_host")[[1]],
 \item{protocol}{see \code{\link{scidbconnect}}}
 }
 \description{
-Calls \code{\link{scidbconnect}} and sets aditional environment variables to connect to SciDB with GDAL.
+Calls \code{\link{scidbconnect}} and sets aditional environment variables to connect to the database from GDAL.
 }
 \seealso{
 \code{\link{scidbconnect}}

@@ -1,6 +1,8 @@
 
 
-#' Calls \code{\link{scidbconnect}} and sets aditional environment variables to connect to SciDB with GDAL.
+#' Connect to a SciDB database from R and GDAL
+#' 
+#' Calls \code{\link{scidbconnect}} and sets aditional environment variables to connect to the database from GDAL.
 #'
 #' @rdname scidbstconnect
 #' @aliases scidbstconnect

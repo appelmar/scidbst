@@ -2,9 +2,7 @@
 % Please edit documentation in R/gdal.R
 \name{as_PNG_layer}
 \alias{as_PNG_layer}
-\title{This function downloads a spatial SciDB array as a PNG file, selects one or three bands, and stretches
-attribute values to the range from 0 to 255. Optionally, a TMS is created for fast visualization in web maps.
-If array is a query, it is executed and stored as a temporary array and deleted after successful download.}
+\title{Create a PNG image and TMS from a spatial SciDB array}
 \usage{
 as_PNG_layer(array, TMS = TRUE, bands = NULL, min = NULL, max = NULL,
   layername = NULL)
