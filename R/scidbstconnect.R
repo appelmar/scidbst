@@ -15,7 +15,7 @@
 #' @export
 scidbstconnect <- function (host = options("scidb.default_shim_host")[[1]], port = options("scidb.default_shim_port")[[1]],  username, password, auth_type = c("scidb", "digest"), protocol = c("http", "https")) 
 {
-  scidbconnect()
+  scidbconnect(host, port, username, password, auth_type, protocol)
   suppressMessages(require(rgdal))
   Sys.setenv(SCIDB4GDAL_HOST=paste(protocol, "://",SCIDB_HOST, sep=""), 
              SCIDB4GDAL_PORT=port, 
