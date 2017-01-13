@@ -5,7 +5,7 @@
 \title{Create a PNG image and TMS from a spatial SciDB array}
 \usage{
 as_PNG_layer(array, TMS = TRUE, bands = NULL, min = NULL, max = NULL,
-  layername = NULL)
+  layername = NULL, grayscale.LUT = NULL)
 }
 \arguments{
 \item{array}{a spatial scidbst object}
@@ -20,6 +20,8 @@ downloaded and the PNG image will be a grayscale image. A single integer defines
 \item{max}{attribute value(s) that are mapped to 255, either NULL, a single number or individual numbers for all bands. If NULL, maximum values of the source bands are used.}
 
 \item{layername}{name of the created layer, by default the original array name.}
+
+\item{grayscale.LUT}{lookup table defining color interpretation of one-bands images, must be provided as a data.frame with columns value, R, G, B, and optional A.}
 }
 \value{
 a list with the output file and directory of the TMS if requested
@@ -28,5 +30,17 @@ a list with the output file and directory of the TMS if requested
 This function downloads a spatial SciDB array as a PNG file, selects one or three bands, and stretches
 attribute values to the range from 0 to 255. Optionally, a TMS is created for fast visualization in web maps.
 If array is a query, it is executed and stored as a temporary array and deleted after successful download.
+}
+\examples{
+\dontrun{
+LUT = list()
+LUT$values = seq(0,4000, length.out=100)
+cols = col2rgb(rainbow(100))
+LUT$R = cols["red",]
+LUT$G = cols["green",]
+LUT$B = cols["blue",]
+as_PNG_layer(scidbst("SRTM"), grayscale.LUT=as.data.frame(LUT))
+}
+
 }
 

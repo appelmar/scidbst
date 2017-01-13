@@ -57,10 +57,25 @@
 #' @param min attribute value(s) that are mapped to 0, either NULL, a single number or individual numbers for all bands. If NULL, minimums value of the source bands are used.
 #' @param max attribute value(s) that are mapped to 255, either NULL, a single number or individual numbers for all bands. If NULL, maximum values of the source bands are used.
 #' @param layername name of the created layer, by default the original array name. 
+#' @param grayscale.LUT lookup table defining color interpretation of one-bands images, must be provided as a data.frame with columns value, R, G, B, and optional A. 
+
 #' @return a list with the output file and directory of the TMS if requested
+#' 
+#' @examples
+#' \dontrun{
+#' LUT = list()
+#' LUT$values = seq(0,4000, length.out=100)
+#' cols = col2rgb(rainbow(100))
+#' LUT$R = cols["red",]
+#' LUT$G = cols["green",]
+#' LUT$B = cols["blue",]
+#' as_PNG_layer(scidbst("SRTM"), grayscale.LUT=as.data.frame(LUT))
+#' }
+#' 
 #' @export
-as_PNG_layer <- function(array, TMS=TRUE, bands=NULL, min=NULL, max=NULL, layername=NULL) {
-  
+
+as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NULL, layername = NULL, grayscale.LUT = NULL) 
+{
 
   if (! "scidbst" %in% class(array)) {
     stop("array is not a scidbst object")
@@ -135,39 +150,85 @@ as_PNG_layer <- function(array, TMS=TRUE, bands=NULL, min=NULL, max=NULL, layern
   
   # 1. download array as PNG and scale attribute values to 0 255
   OUTFILE = paste(layername,".png",sep="")
-  
-  
-  
   gdalpath = .find_gdal(require.python=TRUE) 
-  
-  cmd_args = c(
-    str_ot = "-ot Byte",
-    str_of = "-of PNG",
-    str_bands = paste("-b", bands)
-  )
+  downloaded = FALSE
   
   
-  if(is.null(min)) {
-    cmd_args = c(cmd_args, str_scale = paste("-scale_", 1:length(bands), sep="")) 
+  if (!is.null(grayscale.LUT))
+  {
+    if (length(bands) != 1) {
+      warning("more than one band selected, ignoring grayscale.LUT argument.")
+    }
+    else if (!is.data.frame(grayscale.LUT)) {
+      warning("grayscale.LUT must be a data.frame with 4 columns, ignoring grayscale.LUT argument.")
+    }
+    else if (!ncol(grayscale.LUT) %in% c(4,5)) {
+      warning("grayscale.LUT must be a data.frame with 4 or 5 columns, ignoring grayscale.LUT argument.")
+    }
+    else if (!all(c("value", "R", "G", "B") %in% colnames(grayscale.LUT))) {
+      warning("grayscale.LUT have columns value, R,G,B, ignoring grayscale.LUT argument.")
+    }
+    else {
+      # generate LUT file
+      LUT.file = tempfile()
+      alpha = ("A" %in% colnames(grayscale.LUT))
+      cat(paste(sapply(1:nrow(grayscale.LUT), function(i) {
+        paste(grayscale.LUT$value[i], round(grayscale.LUT$R[i]), round(grayscale.LUT$G[i]), round(grayscale.LUT$B[i]),  ifelse(alpha, round(grayscale.LUT$A[i]), ""))
+      }),collapse="\n"), file=LUT.file)
+      
+      cmd_args = "color-relief"
+      cmd_args = c(cmd_args, paste("SCIDB:array=", array@title,  sep = ""))
+      cmd_args = c(cmd_args, LUT.file)
+      cmd_args = c(cmd_args, OUTFILE)
+      cmd_args = c(cmd_args,paste("-b", bands))
+      if(alpha) cmd_args = c(cmd_args, "-alpha")
+      cmd_args = c(cmd_args, "-of PNG")
+      system2(command = file.path(gdalpath, "gdaldem"), args = as.character(cmd_args))
+      downloaded = TRUE
+    }
   }
-  if (!is.null(min)) {
-    cmd_args = c(cmd_args, str_scale = paste(paste("-scale_", 1:length(bands), sep=""), paste(min, " ", max, " ", 0, " ", 255, sep="")))
+  
+  
+  if (!downloaded) {
+    
+    cmd_args = c(
+      str_ot = "-ot Byte",
+      str_of = "-of PNG",
+      str_bands = paste("-b", bands))
+    
+    
+    if(is.null(min)) {
+      cmd_args = c(cmd_args, str_scale = paste("-scale_", 1:length(bands), sep="")) 
+    }
+    if (!is.null(min)) {
+      cmd_args = c(cmd_args, str_scale = paste(paste("-scale_", 1:length(bands), sep=""), paste(min, " ", max, " ", 0, " ", 255, sep="")))
+    }
+    
+    
+    cmd_args = c(cmd_args, paste("SCIDB:array=", array@title, sep=""))
+    cmd_args = c(cmd_args, OUTFILE) 
+    
+    # run gdal_translate
+    system2(command = file.path(gdalpath, "gdal_translate"), args = as.character(cmd_args))
+    downloaded = TRUE
   }
   
   
-  cmd_args = c(cmd_args, paste("SCIDB:array=", array@title, sep=""))
-  cmd_args = c(cmd_args, OUTFILE) 
-  
-  # run gdal_translate
-  system2(command = file.path(gdalpath,"gdal_translate"), args =  as.character(cmd_args))
   
   out$image = NULL
-  if(file.exists(file.path(getwd(),OUTFILE)))  out$image = file.path(getwd(),OUTFILE)
+  if (file.exists(file.path(getwd(), OUTFILE))) 
+    out$image = file.path(getwd(), OUTFILE)
+  
   
   # if array reference is a query, remove temporary array
   if (!isNamedArray(array)) {
-    scidbremove(layername,force=TRUE)
+    scidbremove(layername, force = TRUE)
   }
+  
+  
+  
+  
+  
   
   # 2. create a tile map service
   if (TMS) {
