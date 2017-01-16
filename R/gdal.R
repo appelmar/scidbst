@@ -143,8 +143,10 @@ as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NUL
   
   # if array reference is a query, run this query and store result as temporary array
   if (!isNamedArray(array)) {
-    warning("since the provided array is a (nested) query, argument rm.scidb will be set to TRUE")
-    rm.scidb = TRUE
+    if (!rm.scidb) {
+      warning("since the provided array is a (nested) query, argument rm.scidb will be set to TRUE")
+      rm.scidb = TRUE
+    }
     array = scidbsteval(array,name=layername,temp=TRUE)
   }
   
