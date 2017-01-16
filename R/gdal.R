@@ -58,13 +58,14 @@
 #' @param max attribute value(s) that are mapped to 255, either NULL, a single number or individual numbers for all bands. If NULL, maximum values of the source bands are used.
 #' @param layername name of the created layer, by default the original array name. 
 #' @param grayscale.LUT lookup table defining color interpretation of one-bands images, must be provided as a data.frame with columns value, R, G, B, and optional A. 
+#' @param rm.scidb logical, whether or not the SciDB array shall be removed
 
 #' @return a list with the output file and directory of the TMS if requested
 #' 
 #' @examples
 #' \dontrun{
 #' LUT = list()
-#' LUT$values = seq(0,4000, length.out=100)
+#' LUT$value = seq(0,4000, length.out=100)
 #' cols = col2rgb(rainbow(100))
 #' LUT$R = cols["red",]
 #' LUT$G = cols["green",]
@@ -74,7 +75,7 @@
 #' 
 #' @export
 
-as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NULL, layername = NULL, grayscale.LUT = NULL) 
+as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NULL, layername = NULL, grayscale.LUT = NULL, rm.scidb=FALSE) 
 {
 
   if (! "scidbst" %in% class(array)) {
@@ -142,6 +143,8 @@ as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NUL
   
   # if array reference is a query, run this query and store result as temporary array
   if (!isNamedArray(array)) {
+    warning("since the provided array is a (nested) query, argument rm.scidb will be set to TRUE")
+    rm.scidb = TRUE
     array = scidbsteval(array,name=layername,temp=TRUE)
   }
   
@@ -219,15 +222,7 @@ as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NUL
   if (file.exists(file.path(getwd(), OUTFILE))) 
     out$image = file.path(getwd(), OUTFILE)
   
-  
-  # if array reference is a query, remove temporary array
-  if (!isNamedArray(array)) {
-    scidbremove(layername, force = TRUE)
-  }
-  
-  
-  
-  
+
   
   
   # 2. create a tile map service
@@ -239,6 +234,15 @@ as_PNG_layer <- function (array, TMS = TRUE, bands = NULL, min = NULL, max = NUL
     out$TMS = NULL
     if(dir.exists(file.path(getwd(),OUTDIR)))  out$TMS = file.path(getwd(),OUTDIR)
   }
+  
+  
+  
+  # 3. remove temporary array
+  if (rm.scidb) {
+    scidbremove(layername, force = TRUE)
+  }
+  
+  
   
   return(out)
 }
