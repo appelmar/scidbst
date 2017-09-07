@@ -7,10 +7,9 @@
 Coerces a scidbst object into a xts time series.
 }
 \seealso{
-Other coerce.scidbst: \code{\link{as-scidbst,RasterBrick}},
+Other coerce-scidbst: \code{\link{as-scidbst,RasterBrick}},
   \code{\link{as-scidbst,STSDF}},
   \code{\link{as-scidbst,SpatialPointsDataFrame}},
   \code{\link{as-scidbst,data.frame}},
   \code{\link{as-scidbst,scidb}}
 }
-

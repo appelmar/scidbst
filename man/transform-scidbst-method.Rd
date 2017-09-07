@@ -2,8 +2,9 @@
 % Please edit documentation in R/transform-apply.R
 \docType{methods}
 \name{transform.scidbst}
-\alias{apply.scidbst}
+\alias{transform.scidbst}
 \alias{transform,scidbst-method}
+\alias{apply.scidbst}
 \alias{transform.scidbst}
 \title{Transform / Apply function for scidbst object}
 \usage{
@@ -30,4 +31,3 @@ ls7_calc = transform(ls7_brazil_regrid, ndvi = "(band4 - band3) / (band4 + band3
 \seealso{
 \link{transform}, \link{transform.scidb}
 }
-

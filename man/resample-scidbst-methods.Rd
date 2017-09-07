@@ -55,4 +55,3 @@ resampled2 = resample(scidbst.obj,r,"sum") # aggregation function applied on all
 \seealso{
 \code{\link{regrid,scidb-method}} for original regrid function, \code{\link{resample}} for the original resample function
 }
-

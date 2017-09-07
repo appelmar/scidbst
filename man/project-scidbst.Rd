@@ -21,4 +21,3 @@ This function will create a selection of attributes by passing the attribute sta
 \seealso{
 \code{\link[scidb]{project}}
 }
-

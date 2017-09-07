@@ -2,10 +2,10 @@
 % Please edit documentation in R/apply.R
 \docType{methods}
 \name{r.apply,scidbst}
-\alias{r.apply}
-\alias{r.apply,scidb}
 \alias{r.apply,scidbst}
+\alias{r.apply}
 \alias{r_exec}
+\alias{r.apply,scidb}
 \title{Apply custom R functions on scidbst array chunks}
 \usage{
 \S4method{r.apply}{scidbst,`function`}(x, f, array, packages,
@@ -121,4 +121,3 @@ parameter option "stream" for 'method' currently not supported.
      logfile="/tmp/logfile.log")
 }
 }
-

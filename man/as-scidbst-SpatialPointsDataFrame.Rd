@@ -8,10 +8,9 @@ Coerces a scidbst object into a \code{\link{SpatialPointsDataFrame}} by download
 the spatial dimension indices into spatial coordinates.
 }
 \seealso{
-Other coerce.scidbst: \code{\link{as-scidbst,RasterBrick}},
+Other coerce-scidbst: \code{\link{as-scidbst,RasterBrick}},
   \code{\link{as-scidbst,STSDF}},
   \code{\link{as-scidbst,data.frame}},
   \code{\link{as-scidbst,scidb}},
   \code{\link{as-scidbst,xts}}
 }
-

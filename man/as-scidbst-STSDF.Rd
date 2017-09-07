@@ -8,10 +8,9 @@ Coerces a scidbst object into a STSDF object. Spatial and temporal dimension ind
 coordinates using existing spatio-temporal references.
 }
 \seealso{
-Other coerce.scidbst: \code{\link{as-scidbst,RasterBrick}},
+Other coerce-scidbst: \code{\link{as-scidbst,RasterBrick}},
   \code{\link{as-scidbst,SpatialPointsDataFrame}},
   \code{\link{as-scidbst,data.frame}},
   \code{\link{as-scidbst,scidb}},
   \code{\link{as-scidbst,xts}}
 }
-

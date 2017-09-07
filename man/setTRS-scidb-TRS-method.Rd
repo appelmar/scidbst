@@ -23,4 +23,3 @@ The function adds a temporal reference to a scidb array and returns a scidbst ob
 \note{
 Using \code{setTRS} will also persist the metadata for the array directly in SciDB.
 }
-

@@ -3,10 +3,10 @@
 \docType{methods}
 \name{slice,scidbst}
 \alias{slice,scidbst}
-\alias{slice,scidbst,character,POSIXt-method}
-\alias{slice,scidbst,character,integer-method}
 \alias{slice,scidbst,character,numeric-method}
+\alias{slice,scidbst,character,integer-method}
 \alias{slice,scidbst,missing,POSIXt-method}
+\alias{slice,scidbst,character,POSIXt-method}
 \title{Slice a scidbst object at a particular dimension value}
 \usage{
 \S4method{slice}{scidbst,character,character}(x, d, n)
@@ -48,4 +48,3 @@ slice3 = slice(scidbst.obj,"t","2016-05-05") # @ the temporal index for a date
 \seealso{
 \link[scidb]{slice}
 }
-

@@ -42,4 +42,3 @@ cropped = crop(scidbst.obj,e)
 \seealso{
 \code{\link[raster]{crop}} or \code{\link[scidbst]{subarray,scidbst}}
 }
-

@@ -35,4 +35,3 @@ as a S4 method.
 \seealso{
 \link{scidb::cumulate}
 }
-

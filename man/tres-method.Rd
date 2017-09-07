@@ -21,4 +21,3 @@ numeric value
 \description{
 This function returns the temporal resolution as a numeric value with the unit stated by 'tunit'.
 }
-

@@ -2,6 +2,7 @@
 % Please edit documentation in R/TRS-class-decl.R, R/TRS-class.R
 \docType{class}
 \name{TRS}
+\alias{TRS}
 \alias{.trs_class}
 \alias{TRS}
 \title{Temporal Reference System}

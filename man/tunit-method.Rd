@@ -21,4 +21,3 @@ character value
 \description{
 This function returns the temporal unit as a string (character)
 }
-

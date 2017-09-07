@@ -19,4 +19,3 @@ POSIXt object referring to the minimum boundary
 \description{
 Return the minimum boundary of a TemporalExtent object
 }
-

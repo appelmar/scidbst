@@ -2,14 +2,14 @@
 % Please edit documentation in R/dimension.R
 \docType{methods}
 \name{dimensions,scidbst}
-\alias{dimensions,scidb}
 \alias{dimensions,scidbst}
+\alias{dimensions,scidb}
+\alias{xdim,scidbst}
+\alias{xdim,SRS}
+\alias{ydim,scidbst}
+\alias{ydim,SRS}
 \alias{tdim,TRS}
 \alias{tdim,scidbst}
-\alias{xdim,SRS}
-\alias{xdim,scidbst}
-\alias{ydim,SRS}
-\alias{ydim,scidbst}
 \title{Dimension operations}
 \usage{
 \S4method{dimensions}{scidbst}(obj)
@@ -53,4 +53,3 @@ tdim(starr)
 \seealso{
 \code{\link[scidb]{dimensions}}
 }
-

@@ -2,8 +2,12 @@
 % Please edit documentation in R/subarray.R
 \docType{methods}
 \name{subarray,scidbst}
-\alias{subarray,scidb}
 \alias{subarray,scidbst}
+\alias{subarray,scidbst}
+\alias{subarray,scidbst}
+\alias{subarray,scidbst}
+\alias{subarray,scidbst}
+\alias{subarray,scidb}
 \title{Subarray function for scidbst object}
 \usage{
 \S4method{subarray}{scidbst,numeric}(x, limits, between = FALSE)
@@ -70,4 +74,3 @@ chicago_sub5 = subarray(x=chicago,limits=te,between=FALSE)
 \seealso{
 \code{\link[scidb]{subarray}}, \code{\link[scidbst]{crop,scidbst}}
 }
-

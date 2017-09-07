@@ -2,8 +2,8 @@
 % Please edit documentation in R/transfer.R
 \docType{methods}
 \name{transfer,scidbst,scidbst-method}
-\alias{eo_over}
 \alias{transfer,scidbst,scidbst-method}
+\alias{eo_over}
 \title{Transfers dimension indices}
 \usage{
 \S4method{transfer}{scidbst,scidbst}(x, y)
@@ -32,4 +32,3 @@ src.arr = transfer(src.arr,tar.arr)
 # in the target array)
 }
 }
-

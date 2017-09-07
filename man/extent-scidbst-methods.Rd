@@ -3,20 +3,20 @@
 \docType{methods}
 \name{extent,scidbst}
 \alias{extent,scidbst}
-\alias{extent<-,scidb}
-\alias{extent<-,scidb,Extent-method}
-\alias{extent<-,scidbst}
 \alias{extent<-,scidbst,Extent-method}
-\alias{setExtent,scidb}
 \alias{setExtent,scidbst}
-\alias{xmax,scidbst}
-\alias{xmax,scidbst-method}
-\alias{xmin,scidbst}
+\alias{extent<-,scidbst}
+\alias{extent<-,scidb,Extent-method}
+\alias{setExtent,scidb}
+\alias{extent<-,scidb}
 \alias{xmin,scidbst-method}
-\alias{ymax,scidbst}
-\alias{ymax,scidbst-method}
-\alias{ymin,scidbst}
+\alias{xmin,scidbst}
 \alias{ymin,scidbst-method}
+\alias{ymin,scidbst}
+\alias{xmax,scidbst-method}
+\alias{xmax,scidbst}
+\alias{ymax,scidbst-method}
+\alias{ymax,scidbst}
 \title{Gets and sets the spatial extent of a scidbst array}
 \usage{
 \S4method{extent}{scidbst}(x)
@@ -63,4 +63,3 @@ ymax(arr)
 \seealso{
 \code{\link[raster]{extent}}
 }
-

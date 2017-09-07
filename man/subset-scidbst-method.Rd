@@ -2,9 +2,9 @@
 % Please edit documentation in R/subset.R
 \docType{methods}
 \name{subset.scidbst}
-\alias{filter,scidbst}
-\alias{subset,scidbst}
 \alias{subset.scidbst}
+\alias{subset,scidbst}
+\alias{filter,scidbst}
 \title{Subset / Filter method for scidbst objects}
 \usage{
 \method{subset}{scidbst}(x, ...)
@@ -45,4 +45,3 @@ ls7_ndvi_sm05 = filter(ls7_ndvi, "NDVI < 0.5 and height > 1500")
 \seealso{
 \code{\link{subset.scidb}}
 }
-

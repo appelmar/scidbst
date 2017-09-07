@@ -18,4 +18,3 @@ numeric the estimated file size in the unit specified
 \description{
 This function uses the meta information on a scidbst array to estimate the potential file size.
 }
-

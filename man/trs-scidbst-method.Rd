@@ -16,4 +16,3 @@
 \description{
 Returns the Temporal reference object
 }
-

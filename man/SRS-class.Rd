@@ -2,6 +2,7 @@
 % Please edit documentation in R/SRS-class-decl.R, R/SRS-class.R
 \docType{class}
 \name{SRS}
+\alias{SRS}
 \alias{.srs_class}
 \alias{SRS}
 \title{Spatial Reference Class}

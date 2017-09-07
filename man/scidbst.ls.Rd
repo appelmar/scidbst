@@ -24,4 +24,3 @@ and spatial / temporal reference information is returned in additional columns.
 \seealso{
 \code{\link{scidb::scidbls}}
 }
-

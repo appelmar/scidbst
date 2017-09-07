@@ -2,10 +2,10 @@
 % Please edit documentation in R/affine.R
 \docType{methods}
 \name{affine,scidbst}
-\alias{affine}
 \alias{affine,scidbst}
-\alias{affine<-,scidb}
+\alias{affine}
 \alias{affine<-,scidbst}
+\alias{affine<-,scidb}
 \title{Handling for the affine transformation on scidb(st) arrays}
 \usage{
 \S4method{affine}{scidbst}(x)
@@ -37,4 +37,3 @@ for a scidb or scidbst object.
 
 }
 }
-

@@ -3,10 +3,10 @@
 \docType{methods}
 \name{crs,scidbst}
 \alias{crs,scidbst}
-\alias{crs<-,scidb}
 \alias{crs<-,scidbst}
-\alias{setCRS,scidb}
 \alias{setCRS,scidbst}
+\alias{crs<-,scidb}
+\alias{setCRS,scidb}
 \title{Gets and sets the Coordinate Reference System for a scidb/scidbst object}
 \usage{
 \S4method{crs}{scidbst}(x, ...)
@@ -36,4 +36,3 @@ affine transformation and the spatial extent and then run scidbsteval.
 \seealso{
 \code{\link[raster]{projection}}, \code{\link[sp]{CRS-class}}
 }
-

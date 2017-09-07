@@ -16,4 +16,3 @@ logical whether or not the object has a spatial reference
 \description{
 The function checks for certain parameter considered to describe the spatial reference.
 }
-

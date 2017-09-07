@@ -2,19 +2,19 @@
 % Please edit documentation in R/scidb-basic.R
 \docType{methods}
 \name{scidb_attributes,scidbst-method}
-\alias{schema,scidbst}
-\alias{scidb_attributes,scidbst}
 \alias{scidb_attributes,scidbst-method}
-\alias{scidb_coordinate_bounds,scidbst}
 \alias{scidb_coordinate_bounds,scidbst-method}
-\alias{scidb_coordinate_chunksize,scidbst}
-\alias{scidb_coordinate_chunksize,scidbst-method}
-\alias{scidb_coordinate_end,scidbst}
-\alias{scidb_coordinate_end,scidbst-method}
-\alias{scidb_coordinate_overlap,scidbst}
-\alias{scidb_coordinate_overlap,scidbst-method}
-\alias{scidb_coordinate_start,scidbst}
 \alias{scidb_coordinate_start,scidbst-method}
+\alias{scidb_coordinate_end,scidbst-method}
+\alias{scidb_coordinate_overlap,scidbst-method}
+\alias{scidb_coordinate_chunksize,scidbst-method}
+\alias{schema,scidbst}
+\alias{scidb_coordinate_bounds,scidbst}
+\alias{scidb_attributes,scidbst}
+\alias{scidb_coordinate_start,scidbst}
+\alias{scidb_coordinate_end,scidbst}
+\alias{scidb_coordinate_overlap,scidbst}
+\alias{scidb_coordinate_chunksize,scidbst}
 \title{Schema related functions}
 \usage{
 \S4method{scidb_attributes}{scidbst}(x)
@@ -63,4 +63,3 @@ to strucutural information about the scidb array, e.g. the used schema, overlap,
 \link[scidb]{scidb_coordinate_end}, \link[scidb]{scidb_coordinate_overlap}, \link[scidb]{scidb_coordinate_chunksize},
 \link[scidb]{schema}
 }
-

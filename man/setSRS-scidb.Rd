@@ -2,8 +2,8 @@
 % Please edit documentation in R/SRS-class.R
 \docType{methods}
 \name{setSRS,scidb}
-\alias{setSRS}
 \alias{setSRS,scidb}
+\alias{setSRS}
 \alias{setSRS,scidbst}
 \title{Sets the spatial reference system at a given array}
 \usage{
@@ -25,4 +25,3 @@ a scidbst object if return=TRUE
 By knowing the \code{\link{SRS}} and the \code{\link{affine}} projection a spatial reference can be established on a given
 scidb array.
 }
-

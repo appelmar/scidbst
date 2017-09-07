@@ -29,4 +29,3 @@ At this point the join operation works spatial arrays only (this will be extende
 lower resolution will be choosen as the target array. The array with the higher resolution will be regridded into the target array structure, so that
 cells can be merged by transfering the coordinates into the target arrays dimension indices.
 }
-

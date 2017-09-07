@@ -40,4 +40,3 @@ a valid schema parameter or build a schema from the parameters "upper", "chunk" 
 \seealso{
 \code{\link[scidb]{repart}}
 }
-

@@ -21,4 +21,3 @@ POSIXt value
 \description{
 This function returns the reference t0 value. In combination with scidbst this refers to the 0 value in the temporal dimension.
 }
-

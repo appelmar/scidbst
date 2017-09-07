@@ -8,10 +8,9 @@ Coerces a scidbst object into a \code{RasterBrick} object. The information of th
 and will be hold in memory. The spatial dimension indices will be recalculated into spatial coordinates during the process.
 }
 \seealso{
-Other coerce.scidbst: \code{\link{as-scidbst,STSDF}},
+Other coerce-scidbst: \code{\link{as-scidbst,STSDF}},
   \code{\link{as-scidbst,SpatialPointsDataFrame}},
   \code{\link{as-scidbst,data.frame}},
   \code{\link{as-scidbst,scidb}},
   \code{\link{as-scidbst,xts}}
 }
-

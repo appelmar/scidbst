@@ -15,4 +15,3 @@ character - AFL query
 \description{
 The internal scidb proxy object contains the current AFL query string. scidb_op returns the AFL query string.
 }
-

@@ -2,8 +2,8 @@
 % Please edit documentation in R/SRS-class.R
 \docType{methods}
 \name{copySRS,scidbst,scidbst-method}
-\alias{copySRS,scidb,scidbst-method}
 \alias{copySRS,scidbst,scidbst-method}
+\alias{copySRS,scidb,scidbst-method}
 \title{Copy spatial reference}
 \usage{
 \S4method{copySRS}{scidbst,scidbst}(x, y)
@@ -30,4 +30,3 @@ in R and afterwards an iquery command is executed to persist the changes in SciD
  target = copySRS(target,source)
 }
 }
-

@@ -25,4 +25,3 @@ dates.
  times = transformAllTemporalIndices(x,df) # returns only the unique temporal coordinates of scidbst object
 }
 }
-

@@ -16,4 +16,3 @@
 \description{
 The function returns the SRS object of a scidbst object.
 }
-

@@ -13,4 +13,3 @@
 \description{
 Creates a printable representation about relevant information about the scidbst object.
 }
-

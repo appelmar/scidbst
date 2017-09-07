@@ -9,7 +9,7 @@ Description: This package extends the package scidb for spatial and temporal
     correct references, when applying the functions in scidb.
 License: AGPL-3
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 Encoding: UTF-8
 BuildVignette: FALSE
@@ -19,7 +19,7 @@ Imports:
     spacetime,xts,sp,methods,stats,utils
 Suggests:
     knitr
-Collate:
+Collate: 
     'SRS-class-decl.R'
     'TRS-class-decl.R'
     'TemporalExtent-class-decl.R'
@@ -41,6 +41,7 @@ Collate:
     'dimension.R'
     'extent.R'
     'join.R'
+    'pixelts.R'
     'pkg.R'
     'project.R'
     'regrid.R'

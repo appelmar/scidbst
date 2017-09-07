@@ -19,4 +19,3 @@ POSIXt object referring to the maximum boundary
 \description{
 Return the maximum boundary of a TemporalExtent object
 }
-

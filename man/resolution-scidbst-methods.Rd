@@ -2,12 +2,12 @@
 % Please edit documentation in R/ncol.R, R/nrow.R, R/resolution.R
 \docType{methods}
 \name{ncol,scidbst-method}
-\alias{ncol,scidbst}
 \alias{ncol,scidbst-method}
-\alias{nrow,scidbst}
 \alias{nrow,scidbst-method}
-\alias{res,scidbst}
 \alias{resolution,scidbst}
+\alias{res,scidbst}
+\alias{ncol,scidbst}
+\alias{nrow,scidbst}
 \alias{xres,scidbst-method}
 \alias{yres,scidbst-method}
 \title{Spatial resolution}
@@ -55,4 +55,3 @@ nrow(arr)
 ncol(arr)
 }
 }
-

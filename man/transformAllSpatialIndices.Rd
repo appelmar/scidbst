@@ -24,4 +24,3 @@ Transform all spatial indices to spatial coordinates
  coordinates = transformAllSpatialIndices(x,df) # returns only the spatial coordinates of scidbst object
 }
 }
-

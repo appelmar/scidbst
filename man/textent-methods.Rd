@@ -2,8 +2,8 @@
 % Please edit documentation in R/textent.R
 \docType{methods}
 \name{textent,scidbst}
-\alias{textent,POSIXt-method}
 \alias{textent,scidbst}
+\alias{textent,POSIXt-method}
 \title{Getter and constructor for a TemporalExtent}
 \usage{
 \S4method{textent}{scidbst}(x)
@@ -36,4 +36,3 @@ st.arr = scidbst("st_array")
 ext = textent(st.arr)
 }
 }
-

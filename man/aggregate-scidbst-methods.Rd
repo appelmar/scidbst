@@ -2,12 +2,12 @@
 % Please edit documentation in R/aggregate.R
 \docType{methods}
 \name{aggregate.t,scidbst-method}
-\alias{aggreate.sp,scidbst}
-\alias{aggregate}
-\alias{aggregate,scidbst}
-\alias{aggregate.sp,scidbst-method}
-\alias{aggregate.t,scidbst}
 \alias{aggregate.t,scidbst-method}
+\alias{aggregate.sp,scidbst-method}
+\alias{aggregate}
+\alias{aggreate.sp,scidbst}
+\alias{aggregate.t,scidbst}
+\alias{aggregate,scidbst}
 \title{Aggregates a scidbst object over given dimensions and/or attributes}
 \usage{
 \S4method{aggregate.t}{scidbst}(x, by, ...)
@@ -75,4 +75,3 @@ scidbst.obj = scidbst("array3")
 aggt = aggregate.t(scidbst.obj,FUN="avg(attribute1)") # returns something similar to a raster with aggregated values over the temporal dimension
 }
 }
-

@@ -20,4 +20,3 @@ a character describing the reference period for a time unit
 Returns the reference period of a scidbst object, e.g. P1D, P16D or P1M. It combines the temporal resolution with an abbreviation
 for the time unit. Usually the expression is used as "dt" (delta t).
 }
-

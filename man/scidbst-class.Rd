@@ -3,6 +3,7 @@
 \docType{class}
 \name{scidbst}
 \alias{scidbst}
+\alias{scidbst}
 \title{Class scidbst}
 \usage{
 scidbst(...)
@@ -43,6 +44,7 @@ Constructor for scidbst
 
 \item{\code{title}}{The name of the original array}
 }}
+
 \note{
 At least parameter \code{name} should be provided
 }
@@ -52,4 +54,3 @@ scidbconnect(host,port,user,pwd,protocol,authtype)
 chicago = scidbst(name="chicago_sts")
 }
 }
-

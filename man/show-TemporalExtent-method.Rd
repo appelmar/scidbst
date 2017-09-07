@@ -13,4 +13,3 @@
 \description{
 creates a print version of the TemporalExtent object
 }
-

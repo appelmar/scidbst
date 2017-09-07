@@ -2,8 +2,8 @@
 % Please edit documentation in R/TemporalExtent-class-decl.R
 \docType{class}
 \name{TemporalExtent}
-\alias{.textent_class}
 \alias{TemporalExtent}
+\alias{.textent_class}
 \title{Temporal Extent class}
 \description{
 This class represents a temporal interval with POSIXt dates. The constructor for this class is the function
@@ -16,6 +16,7 @@ This class represents a temporal interval with POSIXt dates. The constructor for
 
 \item{\code{max}}{POSIXt derived object defining the maximum inclusive boundary}
 }}
+
 \examples{
 tmin = as.POSIXlt("2016-01-01")
 tmax = strptime("01-02-2016",format="\%d-\%m-\%Y")
@@ -25,4 +26,3 @@ ext = textent(tmin,tmax)
 \seealso{
 \code{\link{textent,scidbst}}
 }
-

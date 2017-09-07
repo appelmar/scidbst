@@ -58,4 +58,3 @@ scidbsteval(agg.t,name=new_name)
 \seealso{
 \code{\link{scidbeval}}
 }
-

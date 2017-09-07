@@ -2,8 +2,8 @@
 % Please edit documentation in R/TRS-class.R
 \docType{methods}
 \name{copyTRS,scidbst,scidbst-method}
-\alias{copyTRS,scidb,scidbst-method}
 \alias{copyTRS,scidbst,scidbst-method}
+\alias{copyTRS,scidb,scidbst-method}
 \title{Copy temporal reference}
 \usage{
 \S4method{copyTRS}{scidbst,scidbst}(x, y)
@@ -34,4 +34,3 @@ Copies the temporal reference systems from scidbst object y to scidbst object x.
  t.arr1 = copyTRS(simple.arr, st.arr2)
 }
 }
-

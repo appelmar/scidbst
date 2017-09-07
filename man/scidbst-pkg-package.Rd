@@ -13,11 +13,10 @@ to maintain the correct references, when applying the functions in scidb.
 This package requires to SciDB instance to operate on, as well as the scidb package for R. It is also important that the SciDB instance
 runs the scidb4geo extension, which allows to maintain the references in scidb.
 }
-\author{
-Florian Lahn <florian.lahn@uni-muenster.de>
-}
 \seealso{
 The scidb4geo extension: \link{https://github.com/mappl/scidb4geo} \\
 Docker image for a quick scidb4geo setup: \link{https://github.com/mappl/scidb-eo}
 }
-
+\author{
+Florian Lahn <florian.lahn@uni-muenster.de>
+}
