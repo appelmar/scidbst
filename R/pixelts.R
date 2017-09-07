@@ -4,7 +4,7 @@
 #' Extracts the time series of a SciDB array at a given coordinate.
 #'
 #'
-#' @name spplot,scidbst
+#' @name pixelts,scidbst
 #' @param obj scidbst object
 #' @param x coordinates of pixel where the time series will be extracted
 #'
